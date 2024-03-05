@@ -29,7 +29,8 @@ export default defineConfig({
         sendResults: "always", // "always" , "on-failure", "off"
       },
     ],
-    ["dot"], // other reporters
+    ["dot"], 
+    ['html'], // other reporters
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
