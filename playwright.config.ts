@@ -25,7 +25,7 @@ export default defineConfig({
     [
       "./node_modules/playwright-slack-report/dist/src/SlackReporter.js",
       {
-        channels: ["tests"], // provide one or more Slack channels
+        channels: ["test-test"], // provide one or more Slack channels
         sendResults: "always", // "always" , "on-failure", "off"
         slackWebHookUrl: process.env.SLACK_WEBHOOK_URL || '', // Use environment variable at runtime 
       },
