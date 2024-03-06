@@ -27,7 +27,7 @@ export default defineConfig({
       {
         channels: ["test-test"], // provide one or more Slack channels
         sendResults: "always", // "always" , "on-failure", "off"
-        slackWebHookUrl: process.env.SLACK_WEBHOOK_URL || '', // Use environment variable at runtime 
+        slackWebHookUrl: process.env.SLACK_WEBHOOK_URL || "", // Use environment variable at runtime 
       },
     ],
     ["dot"], // other reporters
