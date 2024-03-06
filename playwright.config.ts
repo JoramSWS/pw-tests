@@ -27,7 +27,7 @@ export default defineConfig({
       {
         channels: ["tests"], // provide one or more Slack channels
         sendResults: "always", // "always" , "on-failure", "off"
-        slackWebHookUrl: ${{ secret.SLACK_WEBHOOK_URL }} 
+        slackWebHookUrl: ${{ secrets.SLACK_WEBHOOK_URL }} 
       },
     ],
     ["dot"], // other reporters
