@@ -1,7 +1,7 @@
-// Navigates from PostHero to Talent search page
+// Navigates from PostHero page to Premiere page
 import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
   await page.goto('https://secretweapon.studio/posthero/');
-  await page.getByLabel('Search').click();
+  await page.getByRole('link', { name: 'Adobe Premiere' }).click();
 });

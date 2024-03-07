@@ -1,3 +1,5 @@
+// Navigates from Main Page to all the pages in Creative Services dropdown
+// Production Studio, Brand Content, Rock Docs, Production Servces
 import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
