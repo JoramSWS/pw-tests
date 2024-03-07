@@ -1,3 +1,4 @@
+// Navigates from Main Page to Join Our Crew Network
 import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {

@@ -1,3 +1,5 @@
+// Navigates from Main Page to all the pages in Production Software dropdown
+// Production Hero, PlanetHero, CrewHero, PostHero
 import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {

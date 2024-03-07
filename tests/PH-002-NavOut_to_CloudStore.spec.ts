@@ -1,3 +1,4 @@
+// Navigates from PostHero page out to Blackmagic's Cloud Store page
 import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
