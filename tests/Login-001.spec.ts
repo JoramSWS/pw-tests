@@ -1,3 +1,4 @@
+//Login with PostHero username and password and logout
 import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
