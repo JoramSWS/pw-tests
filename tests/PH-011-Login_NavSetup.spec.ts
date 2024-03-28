@@ -9,7 +9,7 @@ test('test', async ({ page }) => {
   await page.getByLabel('Password').click();
   await page.getByLabel('Password').fill(process.env.PASSWORD!);
   await page.getByRole('button', { name: 'Login' }).click();
-  await page.frameLocator('#miniextensions-iframe-embed-01Omj0WJfpY5LNeAyTRQ iframe').getByRole('link', { name: 'PostHero Setup' }).click();
-  await page.frameLocator('#miniextensions-iframe-embed-MnKwsAvMFy92i1uq5HMA iframe').getByText('Serial # 999999999999').click();
-  await page.getByRole('link', { name: 'Logout' }).click();
+ await page.frameLocator('#miniextensions-iframe-embed-01Omj0WJfpY5LNeAyTRQ iframe').getByRole('link', { name: 'PostHero Setup' }).click();
+ await page.frameLocator('#miniextensions-iframe-embed-9cNb5KrWpIVH5FFL27Of iframe').getByText('Serial # 999999999999').click();
+ await page.getByRole('link', { name: 'Logout' }).click();
 });

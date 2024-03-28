@@ -9,10 +9,10 @@ test('test', async ({ page }) => {
   await page.getByLabel('Password').click();
   await page.getByLabel('Password').fill(process.env.PASSWORD!);
   await page.getByRole('button', { name: 'Login' }).click();
-  await page.frameLocator('#miniextensions-iframe-embed-01Omj0WJfpY5LNeAyTRQ iframe').getByRole('link', { name: 'PostHero Setup' }).click();
-  const page1Promise = page.waitForEvent('popup');
-  await page.frameLocator('#miniextensions-iframe-embed-cDFamZJhczNvaU2YmvtT iframe').getByRole('link', { name: 'Cloud Store App' }).click();
+await page.frameLocator('#miniextensions-iframe-embed-01Omj0WJfpY5LNeAyTRQ iframe').getByRole('link', { name: 'PostHero Setup' }).click();
+const page1Promise = page.waitForEvent('popup');
+  await page.frameLocator('#miniextensions-iframe-embed-YO9o58FXvFZIA35GCFFq iframe').getByRole('link', { name: 'Cloud Store App' }).click();
   const page1 = await page1Promise;
-  await page1.getByRole('link', { name: 'Products' }).click();
-  await page.getByRole('link', { name: 'Logout' }).click();
+await page1.getByRole('link', { name: 'Products' }).click();
+await page.getByRole('link', { name: 'Logout' }).click();
 });
