@@ -7,8 +7,8 @@ test('test', async ({ page }) => {
  await page.getByPlaceholder('First').fill('Joram');
  await page.getByPlaceholder('Last').click();
  await page.getByPlaceholder('Last').fill('Schwartz');
- await page.getByLabel('Email*').click();
- await page.getByLabel('Email*').fill('joram.s@secretweapon.studio');
+ await page.getByLabel('Email(Required)').click();
+ await page.getByLabel('Email(Required)').fill('joram.s@secretweapon.studio');
  await page.getByLabel('Industry Role(Required)').click();
  await page.getByLabel('Industry Role(Required)').fill('test');
  await page.getByRole('button', { name: 'Request Early Invite' }).click();
