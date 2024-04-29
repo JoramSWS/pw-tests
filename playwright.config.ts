@@ -22,14 +22,14 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
     ['html'],
-    [
-      "./node_modules/playwright-slack-report/dist/src/SlackReporter.js",
-      {
-        channels: ["pw-tests"], // provide one or more Slack channels
-        sendResults: "always", // "always" , "on-failure", "off"
-        slackWebHookUrl: process.env.SLACK_WEBHOOK_URL, // Use environment variable at runtime 
-      },
-    ],
+    // [
+    //   "./node_modules/playwright-slack-report/dist/src/SlackReporter.js",
+    //   {
+    //     channels: ["pw-tests"], // provide one or more Slack channels
+    //     sendResults: "always", // "always" , "on-failure", "off"
+    //     slackWebHookUrl: process.env.SLACK_WEBHOOK_URL, // Use environment variable at runtime 
+    //   },
+    // ],
     ["dot"], // other reporters
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
