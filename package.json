@@ -8,8 +8,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.42.0",
+    "@playwright/test": "^1.43.1",
     "@types/node": "^20.11.20",
     "playwright-slack-report": "^1.1.72"
+  },
+  "dependencies": {
   }
 }
+
