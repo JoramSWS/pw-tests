@@ -1,10 +1,6 @@
-name: Playwright Tests
+name: Manually Run One Playwright Test
 
 on:
-  pull_request:
-    branches: [ main ]
-  schedule:
-    - cron: '0 2 * * *'
   workflow_dispatch:
     inputs:
       test_name:
