@@ -1,22 +1,40 @@
-name: Run Specific Playwright Test
+name: Playwright Tests
 
 on:
-  workflow_dispatch:  # This allows the workflow to be run manually from GitHub UI
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+    inputs:
+      test_name:
+        description: 'Enter the test name to run'
+        required: false
+        default: ''
 
 jobs:
   test:
+    timeout-minutes: 60
     runs-on: ubuntu-latest
+    environment: production
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      USERNAME: ${{ secrets.USERNAME }}
+      PASSWORD: ${{ secrets.PASSWORD }}
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
       with:
-        node-version: '14'
-
+        node-version: 20
     - name: Install dependencies
-      run: npm install
-
-    - name: Run specific Playwright test
-      run: npx playwright test path/to/your-test.spec.ts --grep "Test Name"
+      run: npm ci
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+    - name: Run Playwright tests
+      run: npx playwright test --grep "${{ github.event.inputs.test_name }}"
+    - uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: playwright-report
+        path: playwright-report/
+        retention-days: 30
