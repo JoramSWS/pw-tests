@@ -14,5 +14,6 @@ test('test', async ({ page }) => {
  await page.getByRole('button', { name: 'Request Early Invite' }).click();
  await page.waitForTimeout(20000); // waits for 20 seconds
  await page.goto('https://airtable.com/app7Biv9CPKSySph7/shrCG7D6WZGsyeHHP/tblTsLIFajEpbdNoZ');
- await page.getByText('Joram').click();
+ await expect(page.locator('text=Joram')).toHaveText(/Joram/); // Use a regex to check presence within the combined text of all elements
+
 });

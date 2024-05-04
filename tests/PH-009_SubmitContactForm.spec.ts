@@ -32,5 +32,5 @@ test('test', async ({ page }) => {
  await page.getByRole('button', { name: 'Submit Request' }).click();
  await page.waitForTimeout(20000); // waits for 20 seconds
  await page.goto('https://airtable.com/app7Biv9CPKSySph7/shrIOpAJpyVPhTPMt');
- await page.getByText('Joram').click();
+ await expect(page.locator('text=Joram')).toHaveText(/Joram/); // Use a regex to check presence within the combined text of all elements
 });
