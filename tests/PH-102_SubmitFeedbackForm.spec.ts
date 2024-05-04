@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
   await page.goto('https://secretweapon.studio/posthero/crew-feedback/');
-  await page.getByLabel('What project did you work on?*').fill('E2E_Testing');
+  await page.getByLabel('What project did you work on?*').fill('Playwright E2E Testing');
   await page.getByLabel('Editor', { exact: true }).check();
   await page.getByLabel('Other', { exact: true }).check();
   await page.getByLabel('Other role: please specify*').click();
@@ -27,7 +27,6 @@ test('test', async ({ page }) => {
   await page.getByRole('button', { name: 'Submit' }).click();
   await page.waitForTimeout(20000); // waits for 20 seconds
   await page.goto('https://airtable.com/app7Biv9CPKSySph7/shrQojyg1OWaaLQmT');
-  await expect(page.locator('text=E2E_Testing')).toHaveText(/E2E_Testing/); // Use a regex to check presence within the combined text of all elements
-
+  await page.getByText('Playwright E2E Testing').click();
 });
 
