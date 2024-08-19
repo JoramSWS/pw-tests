@@ -2,7 +2,7 @@
 import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
- await page.goto('https://secretweapon.studio/productionhero/');
+ await page.goto('https://secretweapon.studio/production-technology/productionhero/');
  await page.getByPlaceholder('First').click();
  await page.getByPlaceholder('First').fill('Joram');
  await page.getByPlaceholder('Last').click();

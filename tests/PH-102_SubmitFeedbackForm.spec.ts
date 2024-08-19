@@ -2,7 +2,7 @@
 import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
-  await page.goto('https://secretweapon.studio/posthero/crew-feedback/');
+  await page.goto('https://secretweapon.studio/production-technology/posthero/crew-feedback/');
   await page.getByLabel('What project did you work on?*').fill('Playwright E2E Testing');
   await page.getByLabel('Editor', { exact: true }).check();
   await page.getByLabel('Other', { exact: true }).check();

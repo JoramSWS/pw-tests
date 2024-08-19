@@ -2,6 +2,6 @@
 import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
-  await page.goto('https://secretweapon.studio/posthero/resolve-collaboration-rates/');
+  await page.goto('https://secretweapon.studio/production-technology/posthero/resolve-collaboration-rates/');
   await page.getByRole('link', { name: 'learn more', exact: true }).click();
 });

@@ -27,6 +27,7 @@ export default defineConfig({
       {
         channels: ["pw-tests"], // provide one or more Slack channels
         sendResults: "always", // "always" , "on-failure", "off"
+        // slackWebHookUrl: process.env.SLACK_CJ_WEBHOOK_URL, // for testing by CJ
         slackWebHookUrl: process.env.SLACK_WEBHOOK_URL, // Use environment variable at runtime 
       },
     ],
