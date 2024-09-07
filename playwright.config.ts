@@ -4,7 +4,7 @@ import { defineConfig, devices } from '@playwright/test';
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-// require('dotenv').config();
+require('dotenv').config();
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -12,13 +12,14 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
-  fullyParallel: true,
+  // fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
+  // workers: process.env.CI ? 1 : undefined,
+  workers: 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
     ['html'],
@@ -27,8 +28,8 @@ export default defineConfig({
       {
         channels: ["pw-tests"], // provide one or more Slack channels
         sendResults: "always", // "always" , "on-failure", "off"
-        // slackWebHookUrl: process.env.SLACK_CJ_WEBHOOK_URL, // for testing by CJ
-        slackWebHookUrl: process.env.SLACK_WEBHOOK_URL, // Use environment variable at runtime 
+        slackWebHookUrl: process.env.SLACK_CJ_WEBHOOK_URL, // for testing by CJ
+        // slackWebHookUrl: process.env.SLACK_WEBHOOK_URL, // Use environment variable at runtime 
       },
     ],
     ["dot"], // other reporters
