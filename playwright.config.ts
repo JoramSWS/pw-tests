@@ -22,7 +22,7 @@ export default defineConfig({
   workers: 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
-    ['html'],
+    ['html', { outputFolder: 'playwright-report', open: 'never' }],
     [
       "./node_modules/playwright-slack-report/dist/src/SlackReporter.js",
       {

@@ -5,9 +5,9 @@ test('test', async ({ page }) => {
   await page.goto('https://secretweapon.studio/');
   await page.getByRole('link', { name: 'Login' }).click();
   await page.getByLabel('Email').click();
-  await page.getByLabel('Email').fill("joramschwartz@gmail.com");
+  await page.getByLabel('Email').fill(process.env.USERNAME!);
   await page.getByLabel('Password').click();
-  await page.getByLabel('Password').fill("IggyPoodle1138!");
+  await page.getByLabel('Password').fill(process.env.PASSWORD!);
   await page.getByRole('button', { name: 'Login' }).click();
   await page.frameLocator('#miniextensions-iframe-embed-01Omj0WJfpY5LNeAyTRQ iframe').getByRole('link', { name: 'PostHero Setup' }).click();
   const [popup2] = await Promise.all([

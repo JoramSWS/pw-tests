@@ -9,6 +9,6 @@ test('test', async ({ page }) => {
   await page.getByLabel('Password').click();
   await page.getByLabel('Password').fill(process.env.PASSWORD!);
   await page.getByRole('button', { name: 'Login' }).click();
-  await page.waitForTimeout(3000); // waits for 3 seconds
+  await page.waitForTimeout(5000); // waits for 5 seconds
   await page.getByRole('link', { name: 'Logout' }).click();
 });
