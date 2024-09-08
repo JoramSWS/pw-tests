@@ -5,4 +5,4 @@ node_modules/
 /playwright/.cache/
 .DS_Store
 .env
-playright.config.ts
+# playright.config.ts
