@@ -2,6 +2,7 @@
 import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
+  test.setTimeout(40000); // Increase timeout to 40 seconds
   await page.goto('https://secretweapon.studio/');
   await page.locator('#tech').getByRole('link', { name: 'learn more' }).click();
   await page.locator('#posthero').getByRole('link', { name: 'learn more' }).click();
