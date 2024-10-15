@@ -3,15 +3,7 @@ import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
   test.setTimeout(40000); // Increase timeout to 40 seconds
-  await page.goto('https://secretweapon.studio/');
-  await page.locator('#tech').getByRole('link', { name: 'learn more' }).click();
-  await page.locator('#posthero').getByRole('link', { name: 'learn more' }).click();
-  await page.locator('.breadcrumb.breadcrumbs.avia-breadcrumbs').getByRole('link', { name: 'Production Technology' }).click();
-  await page.locator('#crewhero').getByRole('link', { name: 'learn more' }).click();
-  await page.locator('.breadcrumb.breadcrumbs.avia-breadcrumbs').getByRole('link', { name: 'Production Technology' }).click();
-  await page.locator('#planethero').getByRole('link', { name: 'learn more' }).click();
-  await page.locator('.breadcrumb.breadcrumbs.avia-breadcrumbs').getByRole('link', { name: 'Production Technology' }).click();
-  await page.locator('#prodhero').getByRole('link', { name: 'learn more' }).click();
+  await page.goto('https://secretweapon.tech/');
   await page.locator('#footer').getByRole('link', { name: 'PostHero™' }).click();
   await page.locator('#footer').getByRole('link', { name: 'CrewHero™' }).click();
   await page.locator('#footer').getByRole('link', { name: 'PlanetHero™' }).click();

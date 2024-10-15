@@ -4,7 +4,7 @@ import { test, expect } from '@playwright/test';
 test('test', async ({ page }) => {
   test.slow(); // Easy way to triple the default timeout
   // ...
-  await page.goto('https://secretweapon.studio/posthero/budget-comps/');
+  await page.goto('https://secretweaponpost.com/budget-comps/');
 const page1Promise = page.waitForEvent('popup'); // Comp 1
   await page.locator('section').filter({ hasText: 'Avid Remote Edit$98,880– view' }).getByRole('link').click();
   const page1 = await page1Promise;

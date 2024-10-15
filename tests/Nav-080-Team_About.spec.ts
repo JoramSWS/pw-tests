@@ -1,8 +1,7 @@
-// Navigate from Main Page to Team and About pages
+// Navigate from Main Page to Team page
 import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
-  await page.goto('https://secretweapon.studio/');
+  await page.goto('https://secretweapon.tech/');
   await page.getByRole('link', { name: 'Team' }).click();
-  // await page.getByRole('link', { name: 'About' }).click();  (About page not live - CJ 8.13.24)
 });

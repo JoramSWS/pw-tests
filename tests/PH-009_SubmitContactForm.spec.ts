@@ -2,7 +2,7 @@
 import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
-    await page.goto('https://secretweapon.studio/production-technology/posthero/');
+    await page.goto('https://secretweapon.tech/posthero/');
     await page.getByLabel('What type of project are you').selectOption('Commercial');
     await page.getByLabel('How big is your post team?*').selectOption('1');
     await page.getByRole('group', { name: 'Do you need Resolve training' }).getByLabel('No').check();
