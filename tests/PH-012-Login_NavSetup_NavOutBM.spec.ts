@@ -14,7 +14,7 @@ test('test', async ({ page }) => {
   const [popup] = await Promise.all([
     page.waitForEvent('popup'),
     // Trigger the action that opens the popup
-    await page.frameLocator('#miniextensions-iframe-embed-YO9o58FXvFZIA35GCFFq iframe').getByRole('link', { name: 'Cloud Store App' }).click()]);
+    await page.frameLocator("iframe[id^='miniextensions-iframe-embed-']").getByRole('link', { name: 'Cloud Store App' }).click()]);
   await popup.waitForLoadState();
   await popup.getByRole('link', { name: 'Products' }).click();
   await page.getByRole('link', { name: 'Logout' }).click();
