@@ -30,7 +30,7 @@ test('test', async ({ page }) => {
     await page.getByLabel('How did you hear about').click();
     await page.getByLabel('How did you hear about').fill('test');
     await page.getByRole('button', { name: 'Submit Request' }).click();
-    await page.waitForTimeout(20000); // waits for 20 seconds
+    await page.waitForTimeout(10000); // waits for 10 seconds
     await page.goto('https://airtable.com/app7Biv9CPKSySph7/shrIOpAJpyVPhTPMt');
-    await page.getByText('Joram').click();
+    await page.getByTestId('gridCell-0:2').locator('div').first().getByText('Joram').click();
 });
