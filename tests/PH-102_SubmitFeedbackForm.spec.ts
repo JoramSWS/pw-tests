@@ -25,8 +25,8 @@ test('test', async ({ page }) => {
   await page.getByLabel('Email Address').click();
   await page.getByLabel('Email Address').fill('joram.s@secretweapon.studio');
   await page.getByRole('button', { name: 'Submit' }).click();
-  await page.waitForTimeout(20000); // waits for 20 seconds
+  await page.waitForTimeout(10000); // waits for 10 seconds
   await page.goto('https://airtable.com/app7Biv9CPKSySph7/shrQojyg1OWaaLQmT');
-  await page.getByText('Playwright E2E Testing').click();
+  await page.getByTestId('gridCell-0:1').locator('div').first().getByText('Playwright E2E Testing').click();
 });
 
