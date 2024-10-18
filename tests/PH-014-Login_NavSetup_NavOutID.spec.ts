@@ -1,4 +1,4 @@
-//Login with PostHero username and password, navigate to Setup, Link out to Cloud ID, and logout
+//Login with PostHero username and password, navigate to Setup, Link out to Cloud ID, and logout.
 import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
