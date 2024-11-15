@@ -1,8 +1,7 @@
-//Login with PostHero username and password, navigate to Setup, Link out to BM Resolve, and logout
+//Login with PostHero username and password, navigate to Setup, Link out to BM Cloud Store, and logout
 import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
-  test.slow(); // Easy way to triple the default timeout
   await page.goto('https://secretweapon.tech/');
   await page.getByRole('link', { name: 'Login' }).click();
   await page.getByLabel('Email').click();
@@ -11,11 +10,11 @@ test('test', async ({ page }) => {
   await page.getByLabel('Password').fill(process.env.PASSWORD!);
   await page.getByRole('button', { name: 'Login' }).click();
   await page.frameLocator('#miniextensions-iframe-embed-01Omj0WJfpY5LNeAyTRQ iframe').getByRole('link', { name: 'PostHero Setup' }).click();
-  const [popup2] = await Promise.all([
+  const [popup8] = await Promise.all([
     page.waitForEvent('popup'),
-    await page.frameLocator('#miniextensions-iframe-embed-YO9o58FXvFZIA35GCFFq iframe').getByRole('link', { name: 'Download Here' }).click()
+    await page.frameLocator('#miniextensions-iframe-embed-YO9o58FXvFZIA35GCFFq iframe').getByRole('link', { name: 'Cloud Store App' }).click()
   ]);
-  await popup2.waitForLoadState();
-  await popup2.getByRole('link', { name: 'What’s New' }).click();
+  await popup8.waitForLoadState();
+  await popup8.getByRole('link', { name: 'Products' }).click();
   await page.getByRole('link', { name: 'Logout' }).click();
 });
