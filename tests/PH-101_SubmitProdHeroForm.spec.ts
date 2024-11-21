@@ -14,5 +14,5 @@ test('test', async ({ page }) => {
  await page.getByRole('button', { name: 'Request Early Invite' }).click();
  await page.waitForTimeout(10000); // waits for 10 seconds
  await page.goto('https://airtable.com/app7Biv9CPKSySph7/shrCG7D6WZGsyeHHP/tblTsLIFajEpbdNoZ');
- await page.getByText('Joram').click();
+ await page.getByTestId('gridCell-0:1').locator('div').first().getByText('Joram').click();
 });
