@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
   await page.goto('https://secretweapon.studio/');
-  await page.getByRole('link', { name: 'Join Our Crew Network' }).click();
+  await page.getByRole('link', { name: 'Join Our Network' }).click();
   
   // Check that there are no elements with the text "Warning"
   const warningCount = await page.locator('text=Warning').count();
