@@ -2,6 +2,7 @@
 import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
+  test.slow();
   await page.goto('https://secretweapon.tech/posthero/demo-setup-2/?a=recmSXaS4SK7L7Clw');
   const page1Promise = page.waitForEvent('popup');
   await page.getByRole('link', { name: 'Blackmagic Cloud Account' }).click();
