@@ -6,9 +6,8 @@ on:
     - cron: '0 2 * * *'
   workflow_dispatch:
   push:
-    branches:
-      - main
-
+      branches:
+        - main
 jobs:
   test:
     timeout-minutes: 60
@@ -23,14 +22,8 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 20
-    - name: Install missing dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y \
-          libasound2 \
-          libicu70 || sudo apt-get install -y libicu-dev \
-          libffi7 || sudo apt-get install -y libffi-dev \
-          libx264-163 || sudo apt-get install -y libx264
+    - name: Install dependencies
+      run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
