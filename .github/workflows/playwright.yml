@@ -21,7 +21,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
-        node-version: 20
+        node-version: 99
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright Browsers
@@ -34,3 +34,21 @@ jobs:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
+  notify:
+      if: failure() # Only run this job if the workflow fails
+      runs-on: ubuntu-latest
+      steps:
+      - name: Notify Slack
+        run: |
+          curl -X POST -H 'Content-type: application/json' --data '{
+            "text": "🚨 *GitHub Action Failed!*",
+            "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ":x: *Playwright Tests Workflow Failed!*\n*Repository:* <https://github.com/${{ github.repository }}|${{ github.repository }}>\n*Branch:* `${{ github.ref_name }}`\n*Run ID:* <https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}|View Logs>"
+                }
+              }
+            ]
+          }' ${{ secrets.SLACK_WEBHOOK_URL }}
