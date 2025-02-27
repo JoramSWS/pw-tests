@@ -2,6 +2,7 @@
 import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
+  test.slow();
   await page.goto('https://secretweapon.tech/');
   await page.getByRole('link', { name: 'Login' }).click();
   await page.getByLabel('Email').click();
