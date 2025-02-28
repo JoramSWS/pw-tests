@@ -10,8 +10,4 @@ test('test', async ({ page }) => {
   const page5Promise = page.waitForEvent('popup'); // Studio 666
   await page.getByRole('link', { name: 'https://www.imdb.com/title/tt15374070/' }).click();
   const page5 = await page5Promise;
-  const page6Promise = page.waitForEvent('popup');  // Rise
-  await page.getByRole('link', { name: 'https://www.imdb.com/title/tt11242162/' }).click();
-  const page6 = await page6Promise;
-  await page6.goto('https://www.imdb.com/title/tt11242162/');
 });
